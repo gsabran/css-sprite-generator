@@ -1,0 +1,18 @@
+.sprite_to_img(@item, @target_width, @ratio:1){
+    @item-width: "@{item}-width";
+    @item-height: "@{item}-height";
+    @item-offset-x: "@{item}-offset-x";
+    @item-offset-y: "@{item}-offset-y";
+    @target_height: @target_width/@@item-width*@@item-height*@ratio;
+    overflow: hidden;
+    position:relative;
+    width: @target_width*(1px) !important;
+    height: @target_height*(1px) !important;
+    >img{
+        position: absolute;
+        width: (@target_width / @@item-width * @spritesheet-width)*(1px) !important;
+        height: (@target_height / @@item-height * @spritesheet-height)*(1px) !important;
+        top: (@@item-offset-y * @target_height / @@item-height)*(1px) !important;
+        left: (@@item-offset-x * @target_width / @@item-width)*(1px) !important;
+    }
+}
