@@ -2,7 +2,7 @@ Sprites are great to limit the number of http requests.
 
 The usual way to display an image is to include it in a div with <tt>overflow: hidden</tt> and adjust the left, top properties. This works well, but it is very annoying to compute those values, and you might have to do it again if your sprite changes :( Here we do that for you!
 
-* Use <tt>grunt-spritesmith</tt> to generate your sprite image and a .less file, let say <tt>sprite.less</tt> Doc is [here](https://www.npmjs.com/package/grunt-spritesmith)
+* Use <tt>grunt-spritesmith</tt> to generate your sprite image and a .less file, let say <tt>sprite.less</tt> Doc is here https://www.npmjs.com/package/grunt-spritesmith
 * in your main .less file, add the line <tt>@import 'sprite';</tt> to include the sprite image properties, and <tt>@import 'img_generator'</tt> to load our function.
 * in your html code, include a contaniner like a <tt>div</tt> with an <tt>img</tt> element within, for instance <tt><div class="img_1"><img src="sprite.png"/></div></tt>
 * Let say your original image is img_1_src.png and you want it to be displayed with width 40px.  Then add the line <tt>.img_1{ .sprite_to_img(~"img_1_src", 40); }</tt>
